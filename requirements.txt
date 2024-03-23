@@ -2,4 +2,3 @@ flask
 selenium
 sqlalchemy
 qrcode
-pip
