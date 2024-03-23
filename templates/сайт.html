@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ title }}</title>
-    <meta charset=utf-8>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" />
-	<script src="https://vk.com/js/api/openapi.js?150" type="text/javascript"></script>
-  </head>
-  <body>
+{% extends "base_site.html" %}
+
+
+{% block content %}
     <img id="img" src="{{ url_for('static', filename='school_img.jpg') }}" width="125" alt="1357" />
 	<img id="img1" src="{{ url_for('static', filename='school_img.jpg') }}" width="125" alt="1357" />
     <h2>Государственное бюджетное образовательное учреждение "Школа 1357 на Братиславской"</h2>
@@ -14,11 +9,11 @@
 	<div class="container1">
 		<div class="container2">
 			<p>Вы можете записаться на кружок в нашей школе:</p>
-			<ul class="p">
+<!--			<ul class="p">-->
 			    <form action="/кружки">
-			        <li><button class="button">Записаться</button></li>
+			        <a class="btn btn-outline-primary" href="/кружки" role="button">Записаться</a>
 			    </form>
-			</ul>
+<!--			</ul>-->
 		</div>	
 		<img id="build" src="{{ url_for('static', filename='building.jpg') }}" width="600" alt="школа 1357" />
 	</div>	
@@ -28,9 +23,4 @@
 		VK.Widgets.Group("vk_groups", {mode: 4, width: "1000", height: "750", wide: 0}, 101968559); 
 	  </script>
 	</div>  
-	<footer>
-	  <p>© 2024 Maks&Sasha company. All rights reserved.</p>
-	</footer>
-	
-  </body>
-</html>
+{% endblock %}
